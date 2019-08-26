@@ -20,6 +20,15 @@
 
 int main(int argc, char ** argv)
 {
+
+    if(argc != 1)
+    {
+        printf("Usage: ./tcp_connection_server \n");
+        return -1;
+    }
+
+
+
     char buffer[BUF_LEN];
     struct sockaddr_in server_addr, client_addr;
     char temp[20];
@@ -77,6 +86,7 @@ int main(int argc, char ** argv)
         printf("Server : %s client connected. cnt = %d \n", temp, i++);
 
     }
+
     close(client_fd);
     close(server_fd);
 }
